@@ -18,5 +18,7 @@ public class Main {
         bmw.information();
         kia.information();
         hyundai.information();
+
+        //Стало лень расписывать аналогично тому, что и в классе Human
     }
 }
