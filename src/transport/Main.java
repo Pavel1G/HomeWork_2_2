@@ -20,6 +20,5 @@ public class Main {
         bmw.information();
         kia.information();
         hyundai.information();
-
     }
 }
