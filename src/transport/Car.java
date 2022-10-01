@@ -2,12 +2,12 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car {
+public class Car extends Transport{
 
     public static class Key {
+
         private final boolean isRemoteEngineStart;
         private final boolean isKeylessAccess;
-
         public Key() {
             this(false, false);
         }
@@ -24,13 +24,13 @@ public class Car {
         public boolean isKeylessAccess() {
             return isKeylessAccess;
         }
-    }
 
+    }
     public static class Insurance {
+
         private LocalDate expireDate;
         private double cost;
         private String number;
-
         public Insurance() {
             this(null, 10000, "123456789");
         }
@@ -73,14 +73,9 @@ public class Car {
                 System.out.println("Номер страховки некорректный!");
             }
         }
-    }
 
-    private final String brand;
-    private final String model;
+    }
     private double engineVolume;
-    private String color;
-    private final int productionYear;
-    private String productionCountry;
 
     private String gear;
 
@@ -105,17 +100,7 @@ public class Car {
                Key key,
                Insurance insurance
     ) {
-        if (brand == null) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-
-        if (model == null) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
+        super(brand, model, productionYear, productionCountry, color, 0);
 
         if (engineVolume == 0) {
             this.engineVolume = 1.5;
@@ -123,23 +108,6 @@ public class Car {
             this.engineVolume = engineVolume;
         }
 
-        if (color == null) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-
-        if (productionYear == 0) {
-            this.productionYear = 2020;
-        } else {
-            this.productionYear = productionYear;
-        }
-
-        if (productionCountry == null) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
 
         this.gear = "МКПП";
         this.regNumber = "x000xx000";
@@ -166,35 +134,24 @@ public class Car {
                         "рег.номер - %s, тип кузова - %s, количество мест - %d, резина - %s," +
                         "бесключевой доступ - %s, удаленный запуск двигателя - %s, номер страховки - %s," +
                         "стоимость страховки - %.2f рублей, срок действия страховки - %s \n",
-                brand, model, productionYear, productionCountry, color, engineVolume, gear, regNumber, typeOfBody,
-                seatsCount, isSummerTyres() ? "летняя" : "зимняя", key.isKeylessAccess() ? "есть" : "нет",
-                key.isRemoteEngineStart() ? "есть" : "нет", insurance.getNumber(), insurance.getCost(),
-                insurance.getExpireDate());
+                getBrand(), getModel(), getProductionYear(), getProductionCountry(), getColor(), engineVolume, gear,
+                regNumber, typeOfBody, seatsCount,
+                isSummerTyres() ? "летняя" : "зимняя",
+                key.isKeylessAccess() ? "есть" : "нет",
+                key.isRemoteEngineStart() ? "есть" : "нет",
+                insurance.getNumber(), insurance.getCost(), insurance.getExpireDate());
     }
 
-    public void setProductionCountry(String productionCountry) {
-        this.productionCountry = productionCountry;
+
+    @Override
+    void refill() {
+        System.out.println("Заправить бензином");
     }
 
     public String getTypeOfBody() {
         return typeOfBody;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
 
     public String getBodyType() {
         return typeOfBody;
@@ -216,17 +173,6 @@ public class Car {
         }
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-    }
 
     public String getGear() {
         return gear;
