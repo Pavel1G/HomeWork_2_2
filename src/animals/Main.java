@@ -10,7 +10,7 @@ public class Main {
         Predators tiger = new Predators("Тигр", 12, "Саванна", 75, "Другие животные");
         Predators bear = new Predators("Медведь", 7, "Лес", 45, "Растительная еда");
 
-        Amphibians frog = new Amphibians("Лягушка", 1, "Болото");
+        Amphibian frog = new Amphibian("Лягушка", 1, "Болото");
 
         FlightlessBirds peacock = new FlightlessBirds("Павлин", 7, "Джунгли", "Пешком");
         FlightlessBirds penguin = new FlightlessBirds("Пингвин", 12, "Льды Антарктиды", "Плавает");

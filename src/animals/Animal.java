@@ -8,11 +8,7 @@ public abstract class Animal {
 
     public Animal(String name, int age) {
         this.name = name;
-        if (age == 0) {
-            this.age = 1;
-        } else {
-            this.age = age;
-        }
+        setAge(age);
     }
 
     abstract void eat();

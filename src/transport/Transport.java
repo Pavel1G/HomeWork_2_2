@@ -10,34 +10,14 @@ public abstract class Transport {
     private int maxSpeed;
 
     public Transport(String brand, String model, int productionYear, String productionCountry, String color, int maxSpeed) {
-        if (brand == null || brand.isEmpty()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-
-        if (model == null || model.isEmpty()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
+        setBrand(brand);
+        setModel(model);
 
         this.productionYear = productionYear;
         this.productionCountry = productionCountry;
 
-        if (color == null || color.isEmpty()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-
-        if (maxSpeed < 0) {
-            this.maxSpeed = Math.abs(maxSpeed);
-        } else if (maxSpeed == 0) {
-            this.maxSpeed = 100;
-        } else {
-            this.maxSpeed = maxSpeed;
-        }
+        setColor(color);
+        setMaxSpeed(maxSpeed);
     }
 
     abstract void refill();

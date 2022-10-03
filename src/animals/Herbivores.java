@@ -9,11 +9,7 @@ public class Herbivores extends Mammals {
     public Herbivores(String name, int age, String livingEnvironment, int speedMoving, String typeFood) {
         super(name, age, livingEnvironment, speedMoving);
 
-        if (typeFood == null || typeFood.isEmpty() || typeFood.isBlank()) {
-            this.typeFood = "Трава";
-        } else {
-            this.typeFood = typeFood;
-        }
+        setLivingEnvironment(livingEnvironment);
     }
 
     @Override

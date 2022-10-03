@@ -2,32 +2,28 @@ package animals;
 
 import java.util.Objects;
 
-public class Amphibians extends Animal {
+public class Amphibian extends Animal {
 
     private String livingEnvironment;
 
-    public Amphibians(String name, int age, String livingEnvironment) {
+    public Amphibian(String name, int age, String livingEnvironment) {
         super(name, age);
-        if (livingEnvironment == null || livingEnvironment.isEmpty() || livingEnvironment.isBlank()) {
-            this.livingEnvironment = "Данные неизвестны";
-        } else {
-            this.livingEnvironment = livingEnvironment;
-        }
+        setLivingEnvironment(livingEnvironment);
     }
 
     @Override
     void eat() {
-
+        System.out.println("Ем живность из водоемов.");
     }
 
     @Override
     void sleep() {
-
+        System.out.println("Сплю фиг знает где.");
     }
 
     @Override
     void move() {
-
+        System.out.println("Перемещаюсь в водоеме.");
     }
 
     void hunting() {
@@ -39,7 +35,7 @@ public class Amphibians extends Animal {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Amphibians that = (Amphibians) o;
+        Amphibian that = (Amphibian) o;
         return Objects.equals(livingEnvironment, that.livingEnvironment);
     }
 
@@ -53,7 +49,7 @@ public class Amphibians extends Animal {
     }
 
     public void setLivingEnvironment(String livingEnvironment) {
-        if (livingEnvironment == null || livingEnvironment.isEmpty() || livingEnvironment.isBlank()) {
+        if (livingEnvironment == null || livingEnvironment.isBlank()) {
             this.livingEnvironment = "Данные неизвестны";
         } else {
             this.livingEnvironment = livingEnvironment;

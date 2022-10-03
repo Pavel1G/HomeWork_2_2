@@ -9,26 +9,23 @@ public class FlyingBirds extends Bird {
     public FlyingBirds(String name, int age, String livingEnvironment, String typeOfMove) {
         super(name, age, livingEnvironment);
 
-        if (typeOfMove == null || typeOfMove.isEmpty() || typeOfMove.isBlank()) {
-            this.typeOfMove = "Летать в облаках";
-        } else {
-            this.typeOfMove = typeOfMove;
-        }
+        setLivingEnvironment(livingEnvironment);
+        setTypeOfMove(typeOfMove);
     }
 
     @Override
     void eat() {
-
+        System.out.println("Ем жучков в полете.");
     }
 
     @Override
     void sleep() {
-
+        System.out.println("Сплю в гнезде или дупле.");
     }
 
     @Override
     void move() {
-
+        System.out.println("Летаю в небе.");
     }
 
     void fly() {
@@ -52,7 +49,7 @@ public class FlyingBirds extends Bird {
     }
 
     public void setTypeOfMove(String typeOfMove) {
-        if (typeOfMove == null || typeOfMove.isEmpty() || typeOfMove.isBlank()) {
+        if (typeOfMove == null || typeOfMove.isBlank()) {
             this.typeOfMove = "Летать в облаках";
         } else {
             this.typeOfMove = typeOfMove;

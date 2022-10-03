@@ -10,17 +10,8 @@ public abstract class Mammals extends Animal {
     public Mammals(String name, int age, String livingEnvironment, int speedMoving) {
         super(name, age);
 
-        if (livingEnvironment == null || livingEnvironment.isEmpty() || livingEnvironment.isBlank()) {
-            this.livingEnvironment = "Данные неизвестны";
-        } else {
-            this.livingEnvironment = livingEnvironment;
-        }
-
-        if (speedMoving == 0) {
-            this.speedMoving = 10;
-        } else {
-            this.speedMoving = speedMoving;
-        }
+        setLivingEnvironment(livingEnvironment);
+        setSpeedMoving(speedMoving);
 
     }
 
@@ -51,7 +42,7 @@ public abstract class Mammals extends Animal {
     }
 
     public void setLivingEnvironment(String livingEnvironment) {
-        if (livingEnvironment == null || livingEnvironment.isEmpty() || livingEnvironment.isBlank()) {
+        if (livingEnvironment == null || livingEnvironment.isBlank()) {
             this.livingEnvironment = "Данные неизвестны";
         } else {
             this.livingEnvironment = livingEnvironment;

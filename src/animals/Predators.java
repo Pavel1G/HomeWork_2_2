@@ -10,7 +10,7 @@ public class Predators extends Mammals {
     public Predators(String name, int age, String livingEnvironment, int speedMoving, String typeFood) {
         super(name, age, livingEnvironment, speedMoving);
 
-        if (typeFood == null || typeFood.isEmpty() || typeFood.isBlank()) {
+        if (typeFood == null || typeFood.isBlank()) {
             this.typeFood = "Мясо";
         } else {
             this.typeFood = typeFood;
@@ -19,22 +19,22 @@ public class Predators extends Mammals {
 
     @Override
     void eat() {
-
+        System.out.println("Жру мясо.");
     }
 
     @Override
     void sleep() {
-
+        System.out.println("Сплю как мясо.");
     }
 
     @Override
     void move() {
-
+        System.out.println("Передвигаюсь как кусок мяса.");
     }
 
     @Override
     public void walk() {
-
+        System.out.println("Гуляю как кусок мяса)");
     }
 
     @Override

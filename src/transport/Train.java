@@ -11,37 +11,11 @@ public class Train extends Transport {
                  int cost, int travelTime, String beginStation, String endStation, int numberOfWagons) {
         super(brand, model, productionYear, productionCountry, color, maxSpeed);
 
-        if (cost < 0) {
-            this.cost = Math.abs(cost);
-        } else if (cost == 0) {
-            this.cost = 500;
-        } else {
-            this.cost = cost;
-        }
-
-        if (travelTime == 0 || travelTime < 0) {
-            this.travelTime = 3;
-        } else {
-            this.travelTime = travelTime;
-        }
-
-        if (beginStation == null || beginStation.isEmpty()) {
-            this.beginStation = "Неизвестно";
-        } else {
-            this.beginStation = beginStation;
-        }
-
-        if (endStation == null || endStation.isEmpty()) {
-            this.endStation = "Неизвестно";
-        } else {
-            this.endStation = endStation;
-        }
-
-        if (numberOfWagons == 0) {
-            this.numberOfWagons = 3;
-        } else {
-            this.numberOfWagons = numberOfWagons;
-        }
+        setCost(cost);
+        setTravelTime(travelTime);
+        setBeginStation(beginStation);
+        setEndStation(endStation);
+        setNumberOfWagons(numberOfWagons);
     }
 
     @Override

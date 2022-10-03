@@ -9,27 +9,24 @@ public class FlightlessBirds extends Bird {
     public FlightlessBirds(String name, int age, String livingEnvironment, String typeOfMove) {
         super(name, age, livingEnvironment);
 
-        if (typeOfMove == null || typeOfMove.isEmpty() || typeOfMove.isBlank()) {
-            this.typeOfMove = "Пешком";
-        } else {
-            this.typeOfMove = typeOfMove;
-        }
+        setLivingEnvironment(livingEnvironment);
+        setTypeOfMove(typeOfMove);
     }
 
 
     @Override
     void eat() {
-
+        System.out.println("Кушаю букашек и жучков в земле, травушку.");
     }
 
     @Override
     void sleep() {
-
+        System.out.println("Сплю на земле.");
     }
 
     @Override
     void move() {
-
+        System.out.println("Бегаю как ощипанная курица. Стоп. Я же и есть ощипанная курица.");
     }
 
     @Override
@@ -53,7 +50,7 @@ public class FlightlessBirds extends Bird {
     }
 
     public void setTypeOfMove(String typeOfMove) {
-        if (typeOfMove == null || typeOfMove.isEmpty() || typeOfMove.isBlank()) {
+        if (typeOfMove == null || typeOfMove.isBlank()) {
             this.typeOfMove = "Пешком";
         } else {
             this.typeOfMove = typeOfMove;

@@ -2,12 +2,13 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car extends Transport{
+public class Car extends Transport {
 
     public static class Key {
 
         private final boolean isRemoteEngineStart;
         private final boolean isKeylessAccess;
+
         public Key() {
             this(false, false);
         }
@@ -26,11 +27,13 @@ public class Car extends Transport{
         }
 
     }
+
     public static class Insurance {
 
         private LocalDate expireDate;
         private double cost;
         private String number;
+
         public Insurance() {
             this(null, 10000, "123456789");
         }
@@ -75,6 +78,7 @@ public class Car extends Transport{
         }
 
     }
+
     private double engineVolume;
 
     private String gear;
@@ -102,12 +106,7 @@ public class Car extends Transport{
     ) {
         super(brand, model, productionYear, productionCountry, color, 0);
 
-        if (engineVolume == 0) {
-            this.engineVolume = 1.5;
-        } else {
-            this.engineVolume = engineVolume;
-        }
-
+        setEngineVolume(engineVolume);
 
         this.gear = "МКПП";
         this.regNumber = "x000xx000";
@@ -115,17 +114,8 @@ public class Car extends Transport{
         this.seatsCount = 5;
         this.summerTyres = true;
 
-        if (key == null) {
-            this.key = new Key();
-        } else {
-            this.key = key;
-        }
-
-        if (insurance == null) {
-            this.insurance = new Insurance();
-        } else {
-            this.insurance = insurance;
-        }
+        setKey(key);
+        setInsurance(insurance);
     }
 
 

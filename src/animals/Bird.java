@@ -6,11 +6,7 @@ public abstract class Bird extends Animal {
 
     public Bird(String name, int age, String livingEnvironment) {
         super(name, age);
-        if (livingEnvironment == null || livingEnvironment.isEmpty() || livingEnvironment.isBlank()) {
-            this.livingEnvironment = "Данные неизвестны";
-        } else {
-            this.livingEnvironment = livingEnvironment;
-        }
+        setLivingEnvironment(livingEnvironment);
     }
 
 
@@ -32,7 +28,7 @@ public abstract class Bird extends Animal {
     }
 
     public void setLivingEnvironment(String livingEnvironment) {
-        if (livingEnvironment == null || livingEnvironment.isEmpty() || livingEnvironment.isBlank()) {
+        if (livingEnvironment == null || livingEnvironment.isBlank()) {
             this.livingEnvironment = "Данные неизвестны";
         } else {
             this.livingEnvironment = livingEnvironment;
