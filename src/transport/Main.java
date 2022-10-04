@@ -21,5 +21,21 @@ public class Main {
         kia.information();
         hyundai.information();
 
+
+        Train lastochka = new Train("Ласточка", "В-901", 2011, "Россия", null,
+                301, 3500, 0, "Белорусский вокзал", "Минск-Пассажирский", 11);
+        Train leningrad = new Train("Ленинград", "D-125", 2019, "Россия", null,
+                270, 1700, 0, "Ленинградский вокзал", "Ленинград-Пассажирский", 8);
+
+        lastochka.information();
+        leningrad.information();
+
+        Bus paz = new Bus("ПАЗ", "0172", 1989, "Россия", "оранжевый", 110);
+        Bus liaz = new Bus("ЛИАЗ", "225", 1975, "Украина", "белый", 70);
+        Bus maz = new Bus("МАЗ", "792", 2015, "Россия", "оранжевый", 140);
+
+        paz.information();
+        liaz.information();
+        maz.information();
     }
 }
